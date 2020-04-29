@@ -46,7 +46,7 @@
 			<div class='col col2'>DATE</div>
 			<div class='col col2'>READCOUNT</div>
 		</div>
-		<c:forEach items="boards" var="board">
+		<c:forEach items="${boards}" var="board">
 			<div class='row'>
 				<div class='col col1'>${board.b_id }</div>
 				<div class='col col4'>${board.b_title }</div>

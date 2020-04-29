@@ -1,4 +1,4 @@
-package com.team.vo;
+package com.team.board.vo;
 
 public class Member {
 	private String email;

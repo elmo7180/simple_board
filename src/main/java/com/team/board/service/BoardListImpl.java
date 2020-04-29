@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.team.dao.BoardDAO;
-import com.team.vo.Board;
+import com.team.board.dao.BoardDAO;
+import com.team.board.vo.Board;
 
 @Service
 public class BoardListImpl implements BoardService {
@@ -19,6 +19,9 @@ public class BoardListImpl implements BoardService {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, Board board) {
 		List<Board> list = dao.getList();
+		for(Board var : list) {
+			System.out.println(var.toString());
+		}
 		request.setAttribute("boards", list);
 	}
 

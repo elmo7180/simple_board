@@ -1,4 +1,4 @@
-package com.team.dao;
+package com.team.board.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,9 +9,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.team.JDBC.JDBCUtility;
-import com.team.vo.Board;
-import com.team.vo.type.BoardType;
+import com.team.board.JDBC.JDBCUtility;
+import com.team.board.vo.Board;
+import com.team.board.vo.type.BoardType;
 
 @Repository
 public class BoardDAO {
@@ -24,11 +24,15 @@ public class BoardDAO {
 	
 	public List<Board> getList(){
 		List<Board> list = new ArrayList<Board>();
+		if(util == null) {
+			System.out.println("util is null");
+			util = new JDBCUtility();
+		}
 		//JDBC...
 		// connection -> preparedStatement -> ResultSet -> close
 		conn = util.open();
 		try{
-			pstmt = conn.prepareStatement("SELECT * FROM BOARD ORDER BY b_id");
+			pstmt = conn.prepareStatement("SELECT * FROM 'BOARD' ORDER BY 'b_id'");
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Board board = new Board();

@@ -1,8 +1,8 @@
-package com.team.vo;
+package com.team.board.vo;
 
 import java.util.Date;
 
-import com.team.vo.type.BoardType;
+import com.team.board.vo.type.BoardType;
 
 public class Board {
 	private String b_title;

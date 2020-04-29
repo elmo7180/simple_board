@@ -1,4 +1,4 @@
-package com.team.vo.type;
+package com.team.board.vo.type;
 
 public enum BoardType {
 	FREE("b_type 1"),  // 0

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team.board.service.BoardListImpl;
 import com.team.board.service.BoardService;
-import com.team.vo.Board;
+import com.team.board.vo.Board;
 
 @Controller
 public class HomeController {
