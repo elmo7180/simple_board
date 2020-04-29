@@ -8,11 +8,9 @@ public class Board {
 	private String b_title;
 	private String b_writer;
 	private int b_id;
-	private Date b_date;
+	private String b_date;
 	private String b_content;
 	private int b_readcount;
-	private int b_upcount;
-	private int b_downcount;
 	private BoardType b_type;
 	
 	
@@ -40,10 +38,10 @@ public class Board {
 	public void setB_id(int b_id) {
 		this.b_id = b_id;
 	}
-	public Date getB_date() {
+	public String getB_date() {
 		return b_date;
 	}
-	public void setB_date(Date b_date) {
+	public void setB_date(String b_date) {
 		this.b_date = b_date;
 	}
 	public String getB_content() {
@@ -58,17 +56,10 @@ public class Board {
 	public void setB_readcount(int b_readcount) {
 		this.b_readcount = b_readcount;
 	}
-	public int getB_upcount() {
-		return b_upcount;
-	}
-	public void setB_upcount(int b_upcount) {
-		this.b_upcount = b_upcount;
-	}
-	public int getB_downcount() {
-		return b_downcount;
-	}
-	public void setB_downcount(int b_downcount) {
-		this.b_downcount = b_downcount;
+	@Override
+	public String toString() {
+		return "Board [b_title=" + b_title + ", b_writer=" + b_writer + ", b_id=" + b_id + ", b_date=" + b_date
+				+ ", b_content=" + b_content + ", b_readcount=" + b_readcount + ", b_type=" + b_type + "]";
 	}
 	
 	

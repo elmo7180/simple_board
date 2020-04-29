@@ -1,13 +1,11 @@
 package com.team.vo;
 
-import java.util.Date;
-
 public class Member {
 	private String email;
 	private String name;
 	private String password;
-	private String loginDate;
-	private String signDate;
+	private String login_date;
+	private String sign_date;
 	
 	public String getEmail() {
 		return email;
@@ -27,18 +25,19 @@ public class Member {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getLoginDate() {
-		return loginDate;
+	public String getLogin_date() {
+		return login_date;
 	}
-	public void setLoginDate(String loginDate) {
-		this.loginDate = loginDate;
+	public void setLogin_date(String login_date) {
+		this.login_date = login_date;
 	}
-	public String getSignDate() {
-		return signDate;
+	public String getSign_date() {
+		return sign_date;
 	}
-	public void setSignDate(String signDate) {
-		this.signDate = signDate;
+	public void setSign_date(String sign_date) {
+		this.sign_date = sign_date;
 	}
+	
 	
 	
 }

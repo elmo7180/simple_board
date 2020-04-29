@@ -1,6 +1,5 @@
 package com.team.vo;
 
-import java.util.Date;
 
 public class Reply {
 	private int b_id;
@@ -8,7 +7,7 @@ public class Reply {
 	private int r_p_id;
 	private String r_content;
 	private String r_writer;
-	private Date r_date;
+	private String r_date;
 	
 	
 	public int getB_id() {
@@ -41,10 +40,10 @@ public class Reply {
 	public void setR_writer(String r_writer) {
 		this.r_writer = r_writer;
 	}
-	public Date getR_date() {
+	public String getR_date() {
 		return r_date;
 	}
-	public void setR_date(Date r_date) {
+	public void setR_date(String r_date) {
 		this.r_date = r_date;
 	}
 	

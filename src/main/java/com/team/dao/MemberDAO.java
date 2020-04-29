@@ -104,9 +104,9 @@ public class MemberDAO {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				df = sdf.format(date);
 				member.setEmail(rs.getString("email"));
-				member.setLoginDate(df);
+				member.setLogin_date(df);
 				member.setName(rs.getString("name"));
-				member.setSignDate(rs.getString("sign_date"));
+				member.setSign_date(rs.getString("sign_date"));
 				
 			}
 		}catch(Exception e) {
