@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team.board.service.BoardListImpl;
 import com.team.board.service.BoardService;
+import com.team.board.service.DetailImpl;
 import com.team.board.vo.Board;
 
 @Controller
@@ -29,10 +30,16 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale,HttpServletRequest request,HttpServletResponse response, Board board) {
+	public String home(Locale locale,HttpServletRequest request,HttpServletResponse response) {
 		service = ctx.getBean(BoardListImpl.class);
-		service.execute(request, response, board);
+		service.execute(request, response, null);
 		return "home";
 	}
-	
+	@RequestMapping(value = "detail", method=RequestMethod.GET)
+	public String detail(Locale locale,HttpServletRequest request,HttpServletResponse response) {
+		service = ctx.getBean(DetailImpl.class);
+		service.execute(request, response, null);
+		
+		return "detail";
+	}
 }

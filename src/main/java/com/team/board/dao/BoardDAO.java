@@ -32,7 +32,7 @@ public class BoardDAO {
 		// connection -> preparedStatement -> ResultSet -> close
 		conn = util.open();
 		try{
-			pstmt = conn.prepareStatement("SELECT * FROM 'BOARD' ORDER BY 'b_id'");
+			pstmt = conn.prepareStatement("SELECT * FROM 'BOARD' ORDER BY b_id desc");
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Board board = new Board();
@@ -42,7 +42,7 @@ public class BoardDAO {
 				board.setB_readcount(rs.getInt("b_readcount"));
 				board.setB_title(rs.getString("b_title"));
 				board.setB_type(BoardType.valueOf(rs.getString("b_type")));
-				//TODO writer:email -> writer:name ÏàòÏ†ïÏûëÏóÖ 
+				//TODO writer:email -> writer:name ∫Ø∞Ê« ø‰
 				board.setB_writer(rs.getString("b_writer"));
 				list.add(board);
 			}
@@ -52,5 +52,31 @@ public class BoardDAO {
 			util.close(conn, pstmt, rs);
 		}
 		return list;
+	}
+	public Board getBoard(int b_id) {
+		Board board =null;
+		conn = util.open();
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM BOARD WHERE b_id = ?");
+			pstmt.setInt(1, b_id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				//getOne
+				//rs.get(colNo OR col name)
+				board = new Board();
+				board.setB_content(rs.getString("b_content"));
+				board.setB_date(rs.getString("b_date"));
+				board.setB_id(b_id);
+				board.setB_readcount(rs.getInt("b_readcount"));
+				board.setB_title(rs.getString("b_title"));
+				board.setB_type(BoardType.valueOf(rs.getString("b_type")));
+				board.setB_writer(rs.getString("b_writer"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			util.close(conn, pstmt, rs);
+		}
+		return board;
 	}
 }
